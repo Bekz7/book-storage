@@ -10,9 +10,9 @@ This is the application for storing the books. Currently, it can be performed vi
 Run command `./gradlew clean build`
 
 #### Running via HTML
-After building project run application and go to  your [browser](localhost:8080/)
+After building project run application and go to your [browser](http://localhost:8080/).
 You will be welcomed by simple view
 
 #### Running via REST
-After building project run application and go to [swagger-ui](localhost:8080/swagger-ui.html)
+After building project run application and go to [swagger-ui](http://localhost:8080/swagger-ui.html).
 You will be welcomed by swagger ui 
