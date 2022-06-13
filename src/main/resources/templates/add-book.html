@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add books</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<div class="container my-5">
+    <h2 class="mb-5">New Book</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/add}" th:object="${book}" method="post">
+
+                <div class="mb-3">
+                    <label for="author" class="form-label">Author</label>
+                    <input type="text" th:field="*{author}" class="form-control" id="author"
+                           placeholder="Author (Initials must be AA and separate by space)">
+                    <div th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
+                         class="alert alert-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Title">
+                    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="alert alert-danger"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" th:field="*{isbn}" class="form-control" id="isbn" placeholder="ISBN">
+                    <div th:if="${#fields.hasErrors('isbn')}" th:errors="*{title}" class="alert alert-danger"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add Book">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
